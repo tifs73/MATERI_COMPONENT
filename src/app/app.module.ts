@@ -7,15 +7,20 @@ import { HelloComponent } from './hello.component';
 
 import { LoginComponent } from '../login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { GlobalvarService } from './globalvar.service';
 
 const ROUTES : Routes = [
-  {path : 'login', component : LoginComponent}
+  {path : 'login', component : LoginComponent},
+  {path : 'home', component : HomeComponent},
+  {path : 'home/:nama', component : HomeComponent} //utk kasih parameter
 ]
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
   RouterModule.forRoot(ROUTES) ],
-  declarations: [ AppComponent, HelloComponent, LoginComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [GlobalvarService] //menunjukan service apa saja yg ada di program angular
 })
 export class AppModule { }
