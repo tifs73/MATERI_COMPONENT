@@ -18,7 +18,7 @@ const ROUTES : Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
-  RouterModule.forRoot(ROUTES) ],
+  RouterModule.forRoot(ROUTES) ], //harus ada biar bisa pindah halaman dan pakai hyperlink
   declarations: [ AppComponent, HelloComponent, LoginComponent, HomeComponent ],
   bootstrap:    [ AppComponent ],
   providers: [GlobalvarService] //menunjukan service apa saja yg ada di program angular
