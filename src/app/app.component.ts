@@ -9,7 +9,7 @@ import { GlobalvarService } from "./globalvar.service";
 })
 export class AppComponent {
   constructor(private router: Router, public globalvar: GlobalvarService) {
-    //this.namaglobal = this.globalvar.getNama();
+    this.namaglobal = this.globalvar.getNama();
   }
   name = "Angular " + VERSION.major;
 
@@ -18,6 +18,7 @@ export class AppComponent {
 
   LOGINBUTTON() {
     this.globalvar.setNama(this.textnama);
+    this.namaglobal = this.globalvar.getNama();
     this.router.navigate(["/home/" + this.textnama]);
   }
 }
